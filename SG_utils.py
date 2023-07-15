@@ -5,8 +5,7 @@ from small_func import *
 from PG_utils import sort_rot
 import pickle
 import os, sys
-path = '/storage1/home/yjiang/SpinSG/SSG_codes'
-sys.path.append(path)
+
 
 
 def identify_SG_lattice(gid):
