@@ -499,11 +499,13 @@ def search4ssg(cell, ssg_list, tol = 1e-4):
                         checkh = checkH(ss,ssg_dict, sh, transform)
                         # print(ss['ssgNum'],'Q and H',checkq,checkh)
                         if checkq and checkh:
-                            print(w_iso,transformation)
-                            print(transform,sh)
+                            # print(w_iso,transformation)
+                            # print(transform,sh)
                             flag_s1 = False
                             ssg_q.append(ss['ssgNum'])
-                            out.append(ss)
+                            return {'ssg_num': ssg_q[0], 'spin': ssg_dict['spin'], 'RotC': ssg_dict['RotC'], 'TauC': ssg_dict['TauC'], 'Hnum': ssg_dict['Hnum'],
+                                    'HRotC': ssg_dict['HRotC'], 'HTauC': ssg_dict['HTauC'], 'spin_pointgroup': ssg_dict['QLabel']}
+                            
     ssg_q = unique_list(ssg_q)
     print(len(ssg_q))
     if len(ssg_q) == 1:
@@ -1021,7 +1023,7 @@ def get_ssg(mode, *args, tol = 0.001):
 
 if __name__ == '__main__':
     warnings.filterwarnings("ignore")
-    mcif_file = '199-Mn3Sn.mcif'
+    mcif_file = '1243-CrReO4.mcif'
     poscar_file = 'Mn3Sn.poscar'
     # key : 'ssg_num', 'spin', 'RotC', 'TauC', 'Hnum', 'HRotC', 'HTauC', 'spin_pointgroup'
 

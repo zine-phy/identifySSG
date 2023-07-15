@@ -11,7 +11,7 @@ import numpy as np
 #
 # =============================================================================
 # _dll=CDLL(path.split(path.realpath(argv[0]))[0]+'/libintlng.so')
-_dll=CDLL('./libintlng.so')
+_dll=CDLL('smith_form/libintlng.so')
 
 _smith_form = _dll.smith_form_interface
 _smith_form.argtypes = [c_int,c_int,POINTER(c_int),\
